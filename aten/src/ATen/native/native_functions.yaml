@@ -3155,24 +3155,18 @@
 
 - func: random_(Tensor(a!) self, int from, int to, *, Generator? generator=None) -> Tensor(a!)
   variants: method
-  cpu_bool: True
-  cuda_bool: True
   dispatch:
     CPU: legacy::cpu::_th_random_
     CUDA: clamped_random_cuda_
 
 - func: random_(Tensor(a!) self, int to, *, Generator? generator=None) -> Tensor(a!)
   variants: method
-  cpu_bool: True
-  cuda_bool: True
   dispatch:
     CPU: legacy::cpu::_th_random_
     CUDA: capped_random_cuda_
 
 - func: random_(Tensor(a!) self, *, Generator? generator=None) -> Tensor(a!)
   variants: method
-  cpu_bool: True
-  cuda_bool: True
   dispatch:
     CPU: legacy::cpu::_th_random_
     CUDA: random_cuda_
